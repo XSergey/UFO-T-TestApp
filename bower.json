@@ -1,0 +1,20 @@
+{
+  "name": "UFO-T-TestApp",
+  "homepage": "https://github.com/XSergey/UFO-T-TestApp",
+  "description": "Test application",
+  "main": "app/Container/Views/layouts/index.ufo.php",
+  "authors": [
+    "Sergey Martishin <sergey.martishin.inbox@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
