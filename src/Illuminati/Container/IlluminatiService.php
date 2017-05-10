@@ -40,16 +40,22 @@ class IlluminatiService {
 
 	protected function checkWord(string $first = null, string $second = null){
 		$difference = [];
-		if($first == $second && $first !== null && $second !== null) {
+
+		// bad spaces from files
+		$first = trim($first);
+		$second = trim($second);
+
+		if($first == $second && !empty($first) && !empty($second)) {
 			$difference['status'] = $this->statuses['NotChanged'];
 			$difference['result'] = $second;
-		} else if($first !== $second && $first !== null && $second !== null){
+		} else if($first !== $second && !empty($first) && !empty($second)){
+			var_dump($first);
 			$difference['status'] = $this->statuses['Changed'];
 			$difference['result'] = $this->formatString($first, $second)[0];
-		} else if($first === null && $second !== null){
+		} else if(empty($first) && !empty($second)){
 			$difference['status'] = $this->statuses['NotExistFirst'];
 			$difference['result'] = $second;
-		} else if($second === null && $first !== null){
+		} else if(empty($second) && !empty($first)){
 			$difference['status'] = $this->statuses['NotExistSecond'];
 			$difference['result'] = $first;
 		}
