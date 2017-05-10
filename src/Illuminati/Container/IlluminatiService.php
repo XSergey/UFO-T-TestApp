@@ -49,7 +49,6 @@ class IlluminatiService {
 			$difference['status'] = $this->statuses['NotChanged'];
 			$difference['result'] = $second;
 		} else if($first !== $second && !empty($first) && !empty($second)){
-			var_dump($first);
 			$difference['status'] = $this->statuses['Changed'];
 			$difference['result'] = $this->formatString($first, $second)[0];
 		} else if(empty($first) && !empty($second)){
